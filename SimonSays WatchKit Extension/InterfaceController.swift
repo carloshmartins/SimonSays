@@ -16,6 +16,7 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet weak var yellow: WKInterfaceButton!
     @IBOutlet weak var green: WKInterfaceButton!
     @IBOutlet weak var blue: WKInterfaceButton!
+    @IBOutlet weak var levelLabel: WKInterfaceLabel!
     
     
     var isWatching = true {
@@ -64,12 +65,14 @@ class InterfaceController: WKInterfaceController {
         // wait a fraction of a second before flashing
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
             // mark this button as being active
-            button.setTitle("•")
+//            button.setTitle("•")
+            button.setAlpha(0.5)
             
             // wait again
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 // deactivate the button and flash again
-                button.setTitle("")
+//              button.setTitle("")
+                button.setAlpha(1.0)
                 self?.playNextSequenceItem()
             }
         }
@@ -95,6 +98,7 @@ class InterfaceController: WKInterfaceController {
     func startNewGame() {
         sequence.removeAll()
         addToSequence()
+        levelLabel.setText("Level: 1")
     }
     
     func makeMove(_ color: WKInterfaceButton) {
@@ -108,6 +112,11 @@ class InterfaceController: WKInterfaceController {
             if sequenceIndex == sequence.count {
                 // they made it to the end; add another button to the sequence
                 addToSequence()
+                DispatchQueue.main.async {
+                    self.animate(withDuration: 1, animations: {
+                        self.levelLabel.setText("Level: \(self.sequence.count)")
+                    })
+                }
             }
         } else {
             // they were wrong! End the game.

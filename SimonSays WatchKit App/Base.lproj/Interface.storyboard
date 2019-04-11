@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14460.31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qcb-dB-VJn">
-    <device id="watch42" orientation="portrait">
+    <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -12,9 +12,10 @@
         <!--Interface Controller-->
         <scene sceneID="eaO-nL-hvv">
             <objects>
-                <controller id="qcb-dB-VJn" customClass="InterfaceController" customModule="SimonSays_WatchKit_Extension">
+                <controller spacing="10" id="qcb-dB-VJn" customClass="InterfaceController" customModule="SimonSays_WatchKit_Extension">
                     <items>
-                        <group width="1" height="0.5" alignment="center" verticalAlignment="center" id="jam-b7-qP6">
+                        <label alignment="left" alpha="0.90000000000000002" text="Level:" id="TUk-Q9-kBP"/>
+                        <group width="1" height="0.40000000000000002" alignment="center" verticalAlignment="center" radius="20" spacing="10" id="jam-b7-qP6">
                             <items>
                                 <button width="0.5" height="1" alignment="left" id="zHe-Dl-z2T">
                                     <color key="backgroundColor" red="1" green="0.0" blue="0.12023770070000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -32,7 +33,7 @@
                                 </button>
                             </items>
                         </group>
-                        <group width="1" height="0.5" alignment="center" verticalAlignment="center" id="ySa-5f-eGx">
+                        <group width="1" height="0.40000000000000002" alignment="center" verticalAlignment="center" radius="20" spacing="10" id="ySa-5f-eGx">
                             <items>
                                 <button width="0.5" height="1" alignment="left" id="sKF-Jb-ITq">
                                     <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -54,12 +55,13 @@
                     <connections>
                         <outlet property="blue" destination="2qw-Rf-qVM" id="SBF-gt-Gv7"/>
                         <outlet property="green" destination="sKF-Jb-ITq" id="vg7-e5-cAv"/>
+                        <outlet property="levelLabel" destination="TUk-Q9-kBP" id="qAU-W8-7Hp"/>
                         <outlet property="red" destination="zHe-Dl-z2T" id="696-qU-F5d"/>
                         <outlet property="yellow" destination="pmC-SI-map" id="ggA-UA-Mxg"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="342" y="478"/>
+            <point key="canvasLocation" x="341.74358974358978" y="477.30769230769232"/>
         </scene>
     </scenes>
 </document>
