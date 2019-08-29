@@ -1,6 +1,8 @@
 # SimonSays
 SimonSays is a tap-button memory game. A basic project for WatchOS to learn its framework. Based on Paul Hudson Website.
 
+![alt test](watchos-simon-2.png)
+
 Asset provided by Paul Husdon Website
 
 - ps: This app was created with the intention of learning WatchOS's Framework
